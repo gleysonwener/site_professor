@@ -17,7 +17,7 @@ from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+DATABASE_URL = 'PGPASSWORD=i5SXerLl25szMYlGXpZu psql -h containers-us-west-165.railway.app -U postgres -p 6230 -d railway'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
