@@ -12,7 +12,7 @@ class Usuario(models.Model):
         
 
 class Topo(models.Model):
-    # user = models.ForeignKey(Usuario, on_delete=models.CASCADE, blank=True, null=True)
+    user = models.ForeignKey(Usuario, on_delete=models.CASCADE, blank=True, null=True)
     banner_topo = models.ImageField(upload_to='static/imagens', blank=True, null=True)
 
     def __str__(self):
