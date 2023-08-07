@@ -1,1 +1,1 @@
-web: gunicorn site_professor.wsgi --log-file -
+web: gunicorn site_professor:app
