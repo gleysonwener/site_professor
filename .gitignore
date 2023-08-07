@@ -2,13 +2,10 @@
 *.pot
 *.pyc
 __pycache__
-media
 *.idea
-*.sqlite3
 .DS_Store
 .env
 static
 venv
-manage.py
 notes*
 chaves*
