@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'embed_video',
     'principal',
     'bootstrap4',
+    'dj_database_url',
 ]
 
 SITE_ID = 1
