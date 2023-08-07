@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-!rovjqr80wyom)x887as4gv#e8!g&!ko-12!c777(#1ic5=!vt
 DEBUG = True
 
 ALLOWED_HOSTS = ["web-production-0093.up.railway.app"]
+#ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'embed_video',
     'principal',
+    'bootstrap4',
 ]
 
 SITE_ID = 1
@@ -84,10 +86,21 @@ WSGI_APPLICATION = 'site_professor.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'TCyL203s2AK3AkuYUBKW',
+        'HOST': 'containers-us-west-195.railway.app',
+        'PORT': '5570',
+    }
+}
+
+""" DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+} """
 
 
 AUTHENTICATION_BACKENDS = [
@@ -145,3 +158,17 @@ STATIC_ROOT = BASE_DIR / 'static_cdn'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
+
+
+from django.contrib.messages import constants
+
+MESSAGE_TAGS = {
+    constants.ERROR: 'alert-danger',
+    constants.WARNING: 'alert-warning',
+    constants.DEBUG: 'alert-info',
+    constants.SUCCESS: 'alert-success',
+    constants.INFO: 'alert-info',
+}

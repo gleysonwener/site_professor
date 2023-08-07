@@ -1,7 +1,15 @@
 from django.db import models
 
 from embed_video.fields import EmbedVideoField
+from django.contrib.auth.models import User
 
+class Usuario(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    telefone = models.CharField(max_length=12, blank=True, null=True)
+
+    def __str__(self):
+        return self.user.get_full_name()
+        
 
 class Topo(models.Model):
 
