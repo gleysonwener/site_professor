@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['siteprofessor-production.up.railway.app']
 # ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 
+CSRF_TRUSTED_ORIGINS = ['https://siteprofessor-production.up.railway.app']
 
 # Application definition
 
