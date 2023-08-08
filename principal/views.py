@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import *
 from django.contrib import messages
 from .models import *
+from django.views.decorators.csrf import csrf_exempt
 
 
 def home(request):
@@ -40,12 +41,13 @@ def home(request):
 
     return render(request, 'base.html', context)
 
-
+@csrf_exempt
 @login_required()
 def home_adm(request):
     return render(request, 'adm/principal_adm.html')
 
 
+@csrf_exempt
 @login_required()
 def AdicionarImagemTopo(request):
     template_name = 'adm/addimagemtopo.html'
@@ -63,6 +65,8 @@ def AdicionarImagemTopo(request):
     context['form'] = form
     return render(request, template_name, context)
 
+
+@csrf_exempt
 @login_required()
 def AdicionarCaroucel1(request):
     template_name = 'adm/adicionarcaroucel1.html'
@@ -81,6 +85,8 @@ def AdicionarCaroucel1(request):
     }
     return render(request, template_name, context)
 
+
+@csrf_exempt
 @login_required()
 def AdicionarCaroucel2(request):
     template_name = 'adm/adicionarcaroucel2.html'
@@ -99,6 +105,8 @@ def AdicionarCaroucel2(request):
     }
     return render(request, template_name, context)
 
+
+@csrf_exempt
 @login_required()
 def AdicionarCaroucel3(request):
     template_name = 'adm/adicionarcaroucel3.html'
@@ -117,6 +125,8 @@ def AdicionarCaroucel3(request):
     }
     return render(request, template_name, context)
 
+
+@csrf_exempt
 @login_required()
 def AdicionarImagemLateral(request):
     template_name = 'adm/adicionarimagemlateral.html'
@@ -136,6 +146,7 @@ def AdicionarImagemLateral(request):
     return render(request, template_name, context)
 
 
+@csrf_exempt
 @login_required()
 def AdicionarImagemDestaque(request):
     template_name = 'adm/adicionarimagemdestaque.html'
@@ -155,6 +166,7 @@ def AdicionarImagemDestaque(request):
     return render(request, template_name, context) 
 
 
+@csrf_exempt
 @login_required()
 def AdicionarVideo(request):
     template_name = 'adm/adicionarvideo.html'
@@ -174,6 +186,7 @@ def AdicionarVideo(request):
     return render(request, template_name, context) 
 
 
+@csrf_exempt
 @login_required()
 def AdicionarTabsInfo(request):
     template_name = 'adm/adicionartabsinfo.html'
@@ -192,7 +205,7 @@ def AdicionarTabsInfo(request):
     }
     return render(request, template_name, context) 
 
-
+@csrf_exempt
 @login_required()
 def AdicionarTabsPalestra(request):
     template_name = 'adm/adicionartabspalestra.html'
@@ -212,6 +225,7 @@ def AdicionarTabsPalestra(request):
     return render(request, template_name, context) 
 
 
+@csrf_exempt
 @login_required()
 def AdicionarTabsContato(request):
     template_name = 'adm/adicionartabscontato.html'
