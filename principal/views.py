@@ -126,7 +126,7 @@ def AdicionarCaroucel3(request):
     return render(request, template_name, context)
 
 
-@csrf_exempt
+
 @login_required()
 def AdicionarImagemLateral(request):
     template_name = 'adm/adicionarimagemlateral.html'
@@ -146,7 +146,7 @@ def AdicionarImagemLateral(request):
     return render(request, template_name, context)
 
 
-@csrf_exempt
+
 @login_required()
 def AdicionarImagemDestaque(request):
     template_name = 'adm/adicionarimagemdestaque.html'
@@ -166,7 +166,7 @@ def AdicionarImagemDestaque(request):
     return render(request, template_name, context) 
 
 
-@csrf_exempt
+
 @login_required()
 def AdicionarVideo(request):
     template_name = 'adm/adicionarvideo.html'
@@ -186,7 +186,7 @@ def AdicionarVideo(request):
     return render(request, template_name, context) 
 
 
-@csrf_exempt
+
 @login_required()
 def AdicionarTabsInfo(request):
     template_name = 'adm/adicionartabsinfo.html'
@@ -205,7 +205,7 @@ def AdicionarTabsInfo(request):
     }
     return render(request, template_name, context) 
 
-@csrf_exempt
+
 @login_required()
 def AdicionarTabsPalestra(request):
     template_name = 'adm/adicionartabspalestra.html'
@@ -225,7 +225,7 @@ def AdicionarTabsPalestra(request):
     return render(request, template_name, context) 
 
 
-@csrf_exempt
+
 @login_required()
 def AdicionarTabsContato(request):
     template_name = 'adm/adicionartabscontato.html'
