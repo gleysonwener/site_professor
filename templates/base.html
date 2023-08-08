@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>{% block title %}Home{% endblock title %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
@@ -179,9 +180,8 @@
                     <img src="{{ img_destaque.imgDestaque1.url }}" id="img-destaque-1">
                   {% endfor %}
                 </div>
+                <!-- videos -->
                 <div class="col-md-6 p-1">
-
-<!-- videos -->
                   <div class="card" id="card-youtube">
                     {% for video in videos %}
                       {% video video.url '560 x 300' %}
