@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 def home(request):
     
-    b_topo = Topo.objects.all().order_by('-id')[:1] 
+    # b_topo = Topo.objects.all().order_by('-id')[:1] 
 
     carousel1 = Carousel1.objects.all().order_by('-id')[:1]
     carousel2 = Carousel2.objects.all().order_by('-id')[:1]
@@ -17,16 +17,17 @@ def home(request):
 
     imgs_lateral1 = ImagemLateral.objects.all().order_by('-id')[:2]
     
-    imagemsDestaque = ImagensDestaque.objects.all().order_by('-id')[:2]
+    imagemsDestaque = ImagensDestaque.objects.all().order_by('-id')[:6]
 
     videos = Video.objects.all().order_by('-id')[:2]
 
     tabinfos = TabsInfo.objects.all().order_by('-id')[:1]
     tabpalestras = TabsPalestras.objects.all().order_by('-id')[:1]
     tabcontatos = TabsContato.objects.all().order_by('-id')[:1]
+
    
     context = {
-        'b_topo': b_topo,
+        # 'b_topo': b_topo,
         'carousel1': carousel1,
         'carousel2': carousel2,
         'carousel3': carousel3,
@@ -45,25 +46,6 @@ def home(request):
 @login_required()
 def home_adm(request):
     return render(request, 'adm/principal_adm.html')
-
-
-@csrf_exempt
-@login_required()
-def AdicionarImagemTopo(request):
-    template_name = 'adm/addimagemtopo.html'
-    context = {}
-    if request.method == 'POST':
-        form = ImagemTopoForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Imagem do topa adicinada com sucesso.')
-            return redirect('principal:home_adm')
-
-
-    else:
-        form = ImagemTopoForm()
-    context['form'] = form
-    return render(request, template_name, context)
 
 
 @csrf_exempt
@@ -245,4 +227,40 @@ def AdicionarTabsContato(request):
     return render(request, template_name, context) 
 
 
+@login_required()
+def NovoContato(request):
+    template_name = 'base.html'
+    
+    if request.method == 'POST':
+        assunto = request.POST.get('assunto')
+        nome = request.POST.get('nome')
+        email = request.POST.get('email')
+        texto = request.POST.get('texto')
 
+        contato = Contato.objects.filter(email=email)
+
+        contatos = Contato(
+            assunto = assunto,
+            nome = nome,
+            email = email,
+            texto = texto,
+
+        )
+
+        contatos.save()
+        messages.success(request, 'Obrigado pleo contato, retornaremos em breve!')
+        return redirect('principal:home')
+    
+
+
+@login_required()
+def UltimosCadastros(request):
+
+    carousel10 = Carousel1.objects.all()
+   
+    context = {
+        'carousel10': carousel10,
+      
+    }
+
+    return render(request, 'adm/adicionarcaroucel1.html', context)

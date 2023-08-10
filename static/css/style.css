@@ -27,36 +27,36 @@ body{
 }
 
 #nav2-link1:hover{
-    font-size: 22px;
+    font-size: 21px;
     color:white;
 }
 
 #nav2-link2:hover{
-    font-size: 22px;
+    font-size: 21px;
     color:white;
 }
 
 #nav2-link3:hover{
-    font-size: 22px;
+    font-size: 21px;
     color:white;
 }
 
 #nav2-link4:hover{
-    font-size: 22px;
+    font-size: 21px;
     color:white;
 }
 #nav2-link5:hover{
-    font-size: 22px;
+    font-size: 21px;
     color:white;
 }
 
 #nav2-link6:hover{
-    font-size: 22px;
+    font-size: 21px;
     color:white;
 }
 
 #nav2-link7:hover{
-    font-size: 22px;
+    font-size: 21px;
     color:white;
 }
 
@@ -131,7 +131,27 @@ body{
 #card-youtube {
     width: 100%;
 	height: 100%;
+    border: none;
+    align-items: center;
+    
 	
+}
+
+h3{
+    
+    font-size: 25px;
+    
+}
+
+
+.card-text{
+    
+    font-size: 10px;
+}
+
+#card-principal, #card-principal1{
+    border: none;
+    background-color: white;
 }
 
 #img-destaque-1{
@@ -145,14 +165,16 @@ body{
 }
 
 #footer-1 {
+    align-items: center;
     text-align: center;
-    column-count: 3;
-    background-color: rgb(27, 26, 25);
+    column-count: 2;
+    background-color: rgb(5, 5, 5);
     width: 100%;
-    height: 200px;
+    height: 300px;
     color: white; 
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin
     
 }
 
@@ -216,4 +238,18 @@ body{
 .dropdown {
     display: inline-block; /* deixa o LO do "tamanho do próprio texto" e não da largura inteira da tela*/
     list-style: none; /* rita a "bolinha" do LI*/
+}
+
+.h6-rodape{
+    margin-top: 40px;
+    
+}
+
+#div-rodape1{
+    text-align: center;
+}
+
+h3:hover{
+    font-size: 30px;
+    
 }

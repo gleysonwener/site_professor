@@ -1,15 +1,37 @@
 {% extends "adm/base_adm.html" %}
 {% load bootstrap4 %}
 {% load i18n %}
-{% load account socialaccount %}
+<!-- {% load account socialaccount %} -->
 
-{% block head_title %}{% trans "Login no sistema de administração" %}{% endblock %}
+{% block title %}
+Login no sistema de administração
+{% endblock %}
+
+<!-- {% block head_title %}{% trans "Login no sistema de administração" %}{% endblock %} -->
 
 
-<div class="row ml-5">
+<!-- <div class="row ml-5"> -->
 
 {% block content %}
 
+<div class="row mt-5">
+  <div class="container">
+    <div class="col-md-6">
+      <h1>Login</h1>
+        <form class="login" method="POST" action="{% url 'account_login' %}">
+          {% csrf_token %}
+          {% bootstrap_form form layout='inline' %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          <!-- <a class="btn btn-primary" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a> -->
+          <button class="primaryAction btn btn-info" type="submit">{% trans "Entrar no Sistema" %}</button>
+        </form>
+   </div>
+  </div>
+</div>
+
+
+
+<!-- 
 <div class="container mt-5">
   <h1>{% trans "Login" %}</h1>
 
@@ -47,6 +69,8 @@
     <button class="primaryAction btn btn-primary" type="submit">{% trans "Sign In" %}</button>
   </form>
 
-</div>
+</div> -->
+
+
 {% endblock %}
 

@@ -14,12 +14,11 @@ from pathlib import Path
 
 from decouple import config
 
-# import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DATABASE_URL = 'PGPASSWORD=GwsWc5euuZlmtxybISY1 psql -h containers-us-west-86.railway.app -U postgres -p 6982 -d railway'
+# DATABASE_URL = 'PGPASSWORD=GwsWc5euuZlmtxybISY1 psql -h containers-us-west-86.railway.app -U postgres -p 6982 -d railway'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -30,8 +29,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['siteprofessor-production.up.railway.app']
-# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['siteprofessor-production.up.railway.app']
+ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 
 CSRF_TRUSTED_ORIGINS = ['https://siteprofessor-production.up.railway.app']
@@ -95,27 +94,27 @@ WSGI_APPLICATION = 'site_professor.wsgi.application'
 
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': config('ENGINE'),
-        'NAME': config('NAME'),
-        'USER': config('USER'),
-        'PASSWORD': config('PASSWORD'),
-        'HOST': config('HOST'),
-        'PORT': config('PORT'),
-    }
-} 
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'professor',
-#         'USER': 'userprofessor',
-#         'PASSWORD': 'professor123',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
+#         'ENGINE': config('ENGINE'),
+#         'NAME': config('NAME'),
+#         'USER': config('USER'),
+#         'PASSWORD': config('PASSWORD'),
+#         'HOST': config('HOST'),
+#         'PORT': config('PORT'),
 #     }
 # } 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'professor',
+        'USER': 'userprofessor',
+        'PASSWORD': 'professor123',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+} 
 
 AUTHENTICATION_BACKENDS = [
     
@@ -174,20 +173,13 @@ STATIC_ROOT = BASE_DIR / 'static_cdn'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
-
-
-from django.contrib.messages import constants
-
-MESSAGE_TAGS = {
-    constants.ERROR: 'alert-danger',
-    constants.WARNING: 'alert-warning',
-    constants.DEBUG: 'alert-info',
-    constants.SUCCESS: 'alert-success',
-    constants.INFO: 'alert-info',
-}
 
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.template.context_processors.request',
 )
+
+
+
+# ao fechar o browser
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True

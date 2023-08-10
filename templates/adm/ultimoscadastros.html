@@ -1,0 +1,15 @@
+{% extends 'adm/base_adm.html' %}
+{% load static %}
+
+
+{% block main %}
+{% for c in carousel10 %}
+
+                   
+                    {{ c.decricao_curta }}
+                    {{ c.decricao_maior }}
+                    <img class="d-block w-50" src="{{ c.carousel1.url }}" height="50" width="10">
+                    
+                {% endfor %}
+
+{% endblock %}

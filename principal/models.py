@@ -11,11 +11,11 @@ class Usuario(models.Model):
         return self.user.get_full_name()
         
 
-class Topo(models.Model):
-    banner_topo = models.ImageField(upload_to='static/imagens', blank=True, null=True)
+# class Topo(models.Model):
+#     banner_topo = models.ImageField(upload_to='static/imagens', blank=True, null=True)
 
-    def __str__(self):
-        return str(self.banner_topo)
+#     def __str__(self):
+#         return str(self.banner_topo)
     
 
 class TabsInfo(models.Model):
@@ -68,6 +68,8 @@ class Video(models.Model):
 class ImagensDestaque(models.Model):
 
     imgDestaque1 = models.ImageField(upload_to='static/imagens', blank=True, null=True)
+    descricao_pequena = models.CharField(max_length=25, blank=True, null=True)
+    descricao_longa = models.CharField(max_length=100, blank=True, null=True)
     
     
     def __str__(self):
@@ -102,3 +104,10 @@ class Carousel3(models.Model):
 
        def __str__(self):
             return str(self.carousel3)
+       
+
+class Contato(models.Model):
+    assunto = models.CharField(max_length=255)
+    nome = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
+    texto = models.TextField()

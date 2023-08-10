@@ -2,10 +2,10 @@ from .models import *
 from django import forms
 
 
-class ImagemTopoForm(forms.ModelForm):
-    class Meta:
-        model = Topo
-        fields = '__all__'
+# class ImagemTopoForm(forms.ModelForm):
+#     class Meta:
+#         model = Topo
+#         fields = '__all__'
 
 
 class ImagenCaroucel1(forms.ModelForm):
@@ -58,3 +58,9 @@ class ImagenTabsContatoForm(forms.ModelForm):
     class Meta:
         model = TabsContato
         fields = '__all__'
+
+
+class ContatoForm(forms.ModelForm):
+    class Meta:
+        model = Contato
+        exclude = '__all__'
