@@ -253,14 +253,14 @@ def NovoContato(request):
     
 
 
-# @login_required()
-# def UltimosCadastros(request):
+@login_required()
+def UltimosCadastros(request):
 
-#     carousel10 = Carousel1.objects.all()
+    carousel10 = Carousel1.objects.all()
    
-#     context = {
-#         'carousel10': carousel10,
+    context = {
+        'carousel10': carousel10,
       
-#     }
+    }
 
-#     return render(request, 'adm/adicionarcaroucel1.html', context)
+    return render(request, 'adm/adicionarcaroucel1.html', context)
