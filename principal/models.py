@@ -33,7 +33,7 @@ class TabsPalestras(models.Model):
    
 
     def __str__(self):
-        return str(self.tabspalestras)
+        return str(self.tabspalestra)
        
 
 

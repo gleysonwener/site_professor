@@ -18,5 +18,5 @@ urlpatterns = [
     path('imagem-tabs-palestra/', views.AdicionarTabsPalestra, name='tabs_palestra'),    
     path('imagem-tabs-contato/', views.AdicionarTabsContato, name='tabs_contato'),    
     path('novocontato/', views.NovoContato, name='novocontato'),    
-    path('ultimos_cadastros/', views.UltimosCadastros, name='ultimos_cadastros'),    
+    # path('ultimos_cadastros/', views.UltimosCadastros, name='ultimos_cadastros'),    
 ]
